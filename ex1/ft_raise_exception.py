@@ -45,4 +45,4 @@ def ft_raise_exception():
     print("All tests completed - program didn't crash!")
 
 if __name__ == "__main__":
-    ft_first_exception()
+    ft_raise_exception()
