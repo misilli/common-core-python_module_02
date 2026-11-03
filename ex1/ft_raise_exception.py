@@ -17,7 +17,7 @@ def input_temperature(temp_str: str) -> int:
     return temp
 
 
-def check_temperature(temp: str) -> None:
+def test_temperature(temp: str) -> None:
     try:
         temp_int = input_temperature(temp)
         print(f"Temperature is now {temp_int}°C")
@@ -31,16 +31,16 @@ def ft_raise_exception() -> None:
     print("=== Garden Temperature ===")
     print()
     print("Input data is '25'")
-    check_temperature("25")
+    test_temperature("25")
     print()
     print("Input data is 'abc'")
-    check_temperature("abc")
+    test_temperature("abc")
     print()
     print("Input data is '100'")
-    check_temperature("100")
+    test_temperature("100")
     print()
     print("Input data is '-50'")
-    check_temperature("-50")
+    test_temperature("-50")
     print()
     print("All tests completed - program didn't crash!")
 

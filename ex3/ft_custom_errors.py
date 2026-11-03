@@ -15,25 +15,25 @@ class WaterError(GardenError):
         super().__init__(message)
 
 
-def ft_check_custom_errors(operation: str) -> None:
+def ft_check_custom_errors(operation_number: int) -> None:
     try:
-        if operation == "0":
+        if operation_number == 0:
             raise PlantError("The tomato plant is wilting!")
-        elif operation == "1":
+        elif operation_number == 1:
             raise WaterError("Not enough water in the tank!")
         else:
             pass
     except PlantError as error:
         print(f"Caught PlantError: {error}")
     except WaterError as error:
-        print(f"Caught waterError: {error}")
+        print(f"Caught WaterError: {error}")
 
 
-def ft_check_garden_errors(operation: str) -> None:
+def ft_check_garden_errors(operation_number: int) -> None:
     try:
-        if operation == "0":
+        if operation_number == 0:
             raise PlantError("The tomato plant is wilting!")
-        elif operation == "1":
+        elif operation_number == 1:
             raise WaterError("Not enough water in the tank!")
         else:
             pass
@@ -45,14 +45,14 @@ def ft_custom_errors() -> None:
     print("=== Custom Garden Errors Demo ===")
     print()
     print("Testing PlantError...")
-    ft_check_custom_errors("0")
+    ft_check_custom_errors(0)
     print()
     print("Testing WaterError...")
-    ft_check_custom_errors("1")
+    ft_check_custom_errors(1)
     print()
     print("Testing catching all garden errors...")
-    ft_check_garden_errors("0")
-    ft_check_garden_errors("1")
+    ft_check_garden_errors(0)
+    ft_check_garden_errors(1)
     print()
     print("All custom error types work correctly!")
 
