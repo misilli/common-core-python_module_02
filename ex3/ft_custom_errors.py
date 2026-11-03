@@ -29,7 +29,6 @@ def ft_check_custom_errors(operation: str) -> None:
         print(f"Caught waterError: {error}")
 
 
-
 def ft_check_garden_errors(operation: str) -> None:
     try:
         if operation == "0":
@@ -40,7 +39,6 @@ def ft_check_garden_errors(operation: str) -> None:
             pass
     except GardenError as error:
         print(f"Caught GardenError: {error}")
-
 
 
 def ft_custom_errors() -> None:
@@ -55,7 +53,6 @@ def ft_custom_errors() -> None:
     print("Testing catching all garden errors...")
     ft_check_garden_errors("0")
     ft_check_garden_errors("1")
-    
     print()
     print("All custom error types work correctly!")
 
