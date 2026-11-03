@@ -24,11 +24,23 @@ def ft_check_custom_errors(operation: str) -> None:
         else:
             pass
     except PlantError as error:
-        print(f"Caught plantError: {error}")
+        print(f"Caught PlantError: {error}")
     except WaterError as error:
         print(f"Caught waterError: {error}")
+
+
+
+def ft_check_garden_errors(operation: str) -> None:
+    try:
+        if operation == "0":
+            raise PlantError("The tomato plant is wilting!")
+        elif operation == "1":
+            raise WaterError("Not enough water in the tank!")
+        else:
+            pass
     except GardenError as error:
         print(f"Caught GardenError: {error}")
+
 
 
 def ft_custom_errors() -> None:
@@ -41,8 +53,9 @@ def ft_custom_errors() -> None:
     ft_check_custom_errors("1")
     print()
     print("Testing catching all garden errors...")
-    ft_check_custom_errors("0")
-    ft_check_custom_errors("1")
+    ft_check_garden_errors("0")
+    ft_check_garden_errors("1")
+    
     print()
     print("All custom error types work correctly!")
 
