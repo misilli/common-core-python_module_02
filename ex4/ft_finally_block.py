@@ -1,39 +1,44 @@
 class GardenError(Exception):
-    pass
-
-class plantError(GardenError):
-    pass
+    def __init__(self, message: str = "Unknown garden error") -> None:
+        super().__init__(message)
 
 
-def ft_plant_water(plant : str , error_code : int) :
-    if error_code == 1:
-        raise GardenError(f" Invalid plant name to water: ''")
+class PlantError(GardenError):
+    def __init__(self, message: str = "Unknown plant error") -> None:
+        super().__init__(message)
 
-    print(f"Watering {plant}:", end = " ")
 
-def ft_check_finally_block(plant : str , error_code : int) -> None:
+def water_plant(plant: str) -> None:
+    if plant != plant.capitalize():
+        raise PlantError(f"Invalid plant name to water: '{plant}'")
+    print(f"Watering {plant}: [OK]")
+
+
+def test_watering_system(plants: list[str]) -> None:
+    print("Opening watering system")
     try:
-        ft_plant_water(plant, error_code)
-        print("[OK]")
-    except plantError as error:
-        print(f"Caught plantError: {error}")
+        for plant in plants:
+            water_plant(plant)
+    except PlantError as error:
+        print(f"Caught PlantError: {error}")
+        print(".. ending tests and returning to main")
+        return
     finally:
         print("Closing watering system")
-        
-        
+
+
 def ft_finally_block() -> None:
     print("=== Garden Watering System ===")
     print("Testing valid plants...")
-    print("Opening watering system")
-    ft_check_finally_block("Tomato",0)
-    ft_check_finally_block("Lettuce",0)
-    ft_check_finally_block("Carrots",0)
+    array = ["Tomato", "Lettuce", "Carrots"]
+    test_watering_system(array)
+    print()
+    print("Testing invalid plants...")
+    array2 = ["Tomato", "lettuce"]
+    test_watering_system(array2)
+    print()
+    print("Cleanup always happens, even with errors!")
 
-    """büyük harfa göre hata vercek düzelt
-    """    
-    ft_check_finally_block("Tomato",1)
-    ft_check_finally_block("lettuce",0)
-    
-    
+
 if __name__ == "__main__":
     ft_finally_block()
