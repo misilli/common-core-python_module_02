@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 
-def ft_error(operation_number: int) -> None:
+def garden_operations(operation_number: int) -> None:
     if operation_number == 0:
         int("abc")
     elif operation_number == 1:
@@ -13,9 +13,9 @@ def ft_error(operation_number: int) -> None:
         pass
 
 
-def garden_operations(operation_number: int) -> None:
+def test_error_types(operation_number: int) -> None:
     try:
-        ft_error(operation_number)
+        garden_operations(operation_number)
     except ValueError as error:
         print(f"Caught ValueError: {error}")
     except ZeroDivisionError as error:
@@ -29,15 +29,15 @@ def garden_operations(operation_number: int) -> None:
 def ft_different_errors() -> None:
     print("=== Garden Error Types Demo ===")
     print("Testing operation 0...")
-    garden_operations(0)
+    test_error_types(0)
     print("Testing operation 1...")
-    garden_operations(1)
+    test_error_types(1)
     print("Testing operation 2...")
-    garden_operations(2)
+    test_error_types(2)
     print("Testing operation 3...")
-    garden_operations(3)
+    test_error_types(3)
     print("Testing operation 4...")
-    garden_operations(4)
+    test_error_types(4)
     print("Operation completed successfully")
     print()
     print("All error types tested successfully!")
