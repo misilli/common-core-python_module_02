@@ -1,3 +1,5 @@
+
+
 def ft_error(operation: str) -> None:
     if operation == "0":
         int("abc")
@@ -38,5 +40,7 @@ def ft_different_errors() ->None:
     print("Operation completed successfully")
     print()
     print("All error types tested successfully!")
+
+
 if __name__ == "__main__":
     ft_different_errors()

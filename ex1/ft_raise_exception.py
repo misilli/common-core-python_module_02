@@ -1,4 +1,3 @@
-from typing import Optional
 
 
 class TemperatureError(ValueError):
@@ -7,7 +6,7 @@ class TemperatureError(ValueError):
 
 def input_temperature(temp_str: str) -> int:
     temp = int(temp_str)
-    if temp > 40:
+    if 0 > temp > 40:
         raise TemperatureError(
             f"{temp}°C is too hot for plants (max 40°C)"
         )
@@ -20,14 +19,15 @@ def input_temperature(temp_str: str) -> int:
 
 def check_temperature(temp: str) -> None:
     try:
-        temp = input_temperature(temp)
-        print(f"Temperature is now {temp}°C")
+        temp_int = input_temperature(temp)
+        print(f"Temperature is now {temp_int}°C")
     except TemperatureError as error:
         print(f"Caught input_temperature error: {error}")
     except ValueError as error:
         print(f"Caught input_temperature error: {error}")
 
-def ft_raise_exception():
+
+def ft_raise_exception() -> None:
     print("=== Garden Temperature ===")
     print()
     print("Input data is '25'")
@@ -43,6 +43,7 @@ def ft_raise_exception():
     check_temperature("-50")
     print()
     print("All tests completed - program didn't crash!")
+
 
 if __name__ == "__main__":
     ft_raise_exception()
