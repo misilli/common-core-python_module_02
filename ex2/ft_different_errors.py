@@ -1,4 +1,4 @@
-
+#!/usr/bin/env python3
 
 def ft_error(operation: str) -> None:
     if operation == "0":
@@ -25,7 +25,8 @@ def ft_check_errors(operation: str) -> None:
     except TypeError as error:
         print(f"Caught TypeError: {error}")
 
-def ft_different_errors() ->None:
+
+def ft_different_errors() -> None:
     print("=== Garden Error Types Demo ===")
     print("Testing operation 0...")
     ft_check_errors("0")

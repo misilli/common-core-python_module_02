@@ -1,17 +1,16 @@
-
+#!/usr/bin/env python3
 
 def input_temperature(temp_str: str) -> int:
     return int(temp_str)
 
 
-def check_temperature(temp: str) -> int:
+def check_temperature(temp: str) -> None:
     temp_int: int
     try:
         temp_int = input_temperature(temp)
-        print(f"Temperature is now {temp}°C")
+        print(f"Temperature is now {temp_int}°C")
     except ValueError as error:
         print(f"Caught input_temperature error: {error}")
-    return temp_int
 
 
 def ft_first_exception() -> None:

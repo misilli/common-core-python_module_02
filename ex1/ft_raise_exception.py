@@ -1,4 +1,4 @@
-
+#!/usr/bin/env python3
 
 class TemperatureError(ValueError):
     pass
@@ -6,7 +6,7 @@ class TemperatureError(ValueError):
 
 def input_temperature(temp_str: str) -> int:
     temp = int(temp_str)
-    if 0 > temp > 40:
+    if temp > 40:
         raise TemperatureError(
             f"{temp}°C is too hot for plants (max 40°C)"
         )

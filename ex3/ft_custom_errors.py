@@ -1,3 +1,5 @@
+#!/usr/bin/env python3
+
 class GardenError(Exception):
     def __init__(self, message: str = "Unknown garden error") -> None:
         super().__init__(message)
@@ -11,6 +13,7 @@ class PlantError(GardenError):
 class WaterError(GardenError):
     def __init__(self, message: str = "Unknown water error") -> None:
         super().__init__(message)
+
 
 def ft_check_custom_errors(operation: str) -> None:
     try:
@@ -26,7 +29,8 @@ def ft_check_custom_errors(operation: str) -> None:
         print(f"Caught waterError: {error}")
     except GardenError as error:
         print(f"Caught GardenError: {error}")
-        
+
+
 def ft_custom_errors() -> None:
     print("=== Custom Garden Errors Demo ===")
     print()
@@ -41,6 +45,7 @@ def ft_custom_errors() -> None:
     ft_check_custom_errors("1")
     print()
     print("All custom error types work correctly!")
+
 
 if __name__ == "__main__":
     ft_custom_errors()
