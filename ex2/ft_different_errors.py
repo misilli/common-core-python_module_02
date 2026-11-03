@@ -13,7 +13,7 @@ def ft_error(operation_number: int) -> None:
         pass
 
 
-def ft_check_errors(operation_number: int) -> None:
+def garden_operations(operation_number: int) -> None:
     try:
         ft_error(operation_number)
     except ValueError as error:
@@ -29,15 +29,15 @@ def ft_check_errors(operation_number: int) -> None:
 def ft_different_errors() -> None:
     print("=== Garden Error Types Demo ===")
     print("Testing operation 0...")
-    ft_check_errors(0)
+    garden_operations(0)
     print("Testing operation 1...")
-    ft_check_errors(1)
+    garden_operations(1)
     print("Testing operation 2...")
-    ft_check_errors(2)
+    garden_operations(2)
     print("Testing operation 3...")
-    ft_check_errors(3)
+    garden_operations(3)
     print("Testing operation 4...")
-    ft_check_errors(4)
+    garden_operations(4)
     print("Operation completed successfully")
     print()
     print("All error types tested successfully!")
