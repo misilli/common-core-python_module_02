@@ -10,10 +10,10 @@ class PlantError(GardenError):
         super().__init__(message)
 
 
-def water_plant(plant: str) -> None:
-    if plant != plant.capitalize():
-        raise PlantError(f"Invalid plant name to water: '{plant}'")
-    print(f"Watering {plant}: [OK]")
+def water_plant(plant_name: str) -> None:
+    if plant_name != plant_name.capitalize():
+        raise PlantError(f"Invalid plant name to water: '{plant_name}'")
+    print(f"Watering {plant_name}: [OK]")
 
 
 def test_watering_system(plants: list[str]) -> None:

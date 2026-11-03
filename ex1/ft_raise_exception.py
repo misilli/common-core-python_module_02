@@ -21,9 +21,7 @@ def test_temperature(temp: str) -> None:
     try:
         temp_int = input_temperature(temp)
         print(f"Temperature is now {temp_int}°C")
-    except TemperatureError as error:
-        print(f"Caught input_temperature error: {error}")
-    except ValueError as error:
+    except (TemperatureError, ValueError) as error:
         print(f"Caught input_temperature error: {error}")
 
 
